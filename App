@@ -5,6 +5,11 @@ public class App {
 	public static void main(String[] args) {
 
 		int vowelTotal = 0;
+		int vowelEachTotal_a = 0;
+		int vowelEachTotal_e = 0;
+		int vowelEachTotal_i = 0;
+		int vowelEachTotal_o = 0;
+		int vowelEachTotal_u = 0;
 		int vowelCounter = 0;
 		int index = 0;
 
@@ -12,17 +17,47 @@ public class App {
 				"A man who has everything has everything to lose. A man who has nothing has everything to gain.",
 				"Do not speak of your happiness to one less fortunate than yourself.",
 				"To find fault is easy; to do better may be difficult.",
-				"Know how to listen, and you will profit even from those who talk badly." };
+				"Know how to listen, and you will profit even from those who talk badly." 
+				};
 
 		for (String words : text) {
 			vowelCounter = words.length() - words.replaceAll("(?i)a|e|i|o|u", "").length() + vowelCounter;
 			vowelTotal = vowelTotal + vowelCounter;
-			System.out.println("The number of vowels in Array index " + index + " is " + vowelCounter);
+			System.out.println("Total number of vowels in index " + index + " value: " + vowelCounter);
 			vowelCounter = 0;
+
+			vowelCounter = words.length() - words.replaceAll("(?i)a", "").length() + vowelCounter;
+			vowelEachTotal_a = vowelEachTotal_a + vowelCounter;
+			vowelCounter = 0;
+
+			vowelCounter = words.length() - words.replaceAll("(?i)e", "").length() + vowelCounter;
+			vowelEachTotal_e = vowelEachTotal_e + vowelCounter;
+			vowelCounter = 0;
+
+			vowelCounter = words.length() - words.replaceAll("(?i)i", "").length() + vowelCounter;
+			vowelEachTotal_i = vowelEachTotal_i + vowelCounter;
+			vowelCounter = 0;
+
+			vowelCounter = words.length() - words.replaceAll("(?i)o", "").length() + vowelCounter;
+			vowelEachTotal_o = vowelEachTotal_o + vowelCounter;
+			vowelCounter = 0;
+
+			vowelCounter = words.length() - words.replaceAll("(?i)u", "").length() + vowelCounter;
+			vowelEachTotal_u = vowelEachTotal_u + vowelCounter;
+			vowelCounter =0;
+			
 			index++;
+			
+			}
+			
+		
+		System.out.println("Total number of 'a' vowels: " + vowelEachTotal_a);
+		System.out.println("Total number of 'e' vowels: " + vowelEachTotal_e);
+		System.out.println("Total number of 'i' vowels: " + vowelEachTotal_i);
+		System.out.println("Total number of 'o' vowels: " + vowelEachTotal_o);
+		System.out.println("Total number of 'u' vowels: " + vowelEachTotal_u);
+		System.out.println("Total number of vowels throughout entire String Array: " + vowelTotal);
+		
 		}
-		System.out.println("Total number of vowels equals " + vowelTotal);
 
 	}
-
-}
